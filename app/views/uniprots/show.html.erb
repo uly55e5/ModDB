@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Uniprot ac:</b>
+  <%= @uniprot.uniprot_ac %>
+</p>
+
+<p>
+  <b>Protein:</b>
+  <%= @uniprot.protein_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_uniprot_path(@uniprot) %> |
+<%= link_to 'Back', uniprots_path %>

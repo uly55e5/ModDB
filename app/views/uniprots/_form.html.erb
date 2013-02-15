@@ -1,0 +1,26 @@
+<%= form_for(@uniprot) do |f| %>
+  <% if @uniprot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uniprot.errors.count, "error") %> prohibited this uniprot from being saved:</h2>
+
+      <ul>
+      <% @uniprot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uniprot_ac %><br />
+    <%= f.text_field :uniprot_ac %>
+  </div>
+  <%= button_to "Search Uniprot", new_search_uniprots_path %>
+  <div class="field">
+    <%= f.label :protein_id %><br />
+    <%= f.number_field :protein_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
